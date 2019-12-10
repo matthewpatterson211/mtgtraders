@@ -40,8 +40,8 @@ class DetailViewController: UIViewController {
     //        }
             
             if let jsonSets = try? decoder.decode(MagicSets.self, from: json) {
-                magicSets = jsonSets.data
-                tableView.reloadData()
+//                magicSets = jsonSets.data
+//                tableView.reloadData()
             }
         }
     

@@ -1,8 +1,8 @@
 //
-//  Data.swift
+//  Cards.swift
 //  MtgTraders
 //
-//  Created by Matthew Patterson on 12/9/19.
+//  Created by Matthew Patterson on 12/10/19.
 //  Copyright © 2019 Matthew Patterson. All rights reserved.
 //
 

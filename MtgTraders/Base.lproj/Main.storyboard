@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,47 +52,7 @@
                                 <connections>
                                     <outlet property="magicSetName" destination="7yC-6y-cnI" id="vE6-d5-m3v"/>
                                     <outlet property="magicSetSymbol" destination="gw8-we-NVf" id="l3o-2h-3nb"/>
-                                    <segue destination="wep-sK-jD7" kind="presentation" id="M9p-jt-jTV"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" id="23l-G8-yhu" customClass="CardTableViewCell" customModule="MtgTraders" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="23l-G8-yhu" id="tCH-PX-eZa">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAa-CH-Cxv">
-                                            <rect key="frame" x="31" y="0.0" width="45" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MagicSet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEv-lP-HvP">
-                                            <rect key="frame" x="31" y="22" width="72" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er0-uD-XzZ">
-                                            <rect key="frame" x="360" y="11" width="39" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="er0-uD-XzZ" firstAttribute="centerY" secondItem="tCH-PX-eZa" secondAttribute="centerY" id="1go-wW-xtd"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="AEv-lP-HvP" secondAttribute="bottom" constant="-10.5" id="7Lt-sT-0dj"/>
-                                        <constraint firstItem="er0-uD-XzZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OAa-CH-Cxv" secondAttribute="trailing" constant="8" symbolic="YES" id="DQy-Xb-7jt"/>
-                                        <constraint firstItem="er0-uD-XzZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AEv-lP-HvP" secondAttribute="trailing" constant="8" symbolic="YES" id="N49-qj-Sj4"/>
-                                        <constraint firstItem="AEv-lP-HvP" firstAttribute="top" secondItem="OAa-CH-Cxv" secondAttribute="bottom" constant="1" id="Y80-X3-M9K"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="er0-uD-XzZ" secondAttribute="trailing" constant="-5" id="ima-1F-3LP"/>
-                                        <constraint firstItem="er0-uD-XzZ" firstAttribute="top" secondItem="tCH-PX-eZa" secondAttribute="topMargin" id="mBu-g8-6N8"/>
-                                        <constraint firstItem="AEv-lP-HvP" firstAttribute="leading" secondItem="OAa-CH-Cxv" secondAttribute="leading" id="nb9-2W-DBc"/>
-                                        <constraint firstItem="AEv-lP-HvP" firstAttribute="leading" secondItem="tCH-PX-eZa" secondAttribute="leadingMargin" constant="11" id="tPs-Ff-nTV"/>
-                                    </constraints>
-                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -107,20 +66,49 @@
             </objects>
             <point key="canvasLocation" x="1926.0869565217392" y="-158.03571428571428"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="5MU-qR-GSQ">
+        <!--Set View Controller-->
+        <scene sceneID="LMX-Xn-t57">
             <objects>
-                <viewController id="wep-sK-jD7" customClass="DetailViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Aq4-IU-fVp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <tableViewController id="RRH-Mj-vPS" customClass="SetViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bLS-VV-eBM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="8xS-Ab-PDl"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="utQ-WE-jiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="5BB-gA-q1G" detailTextLabel="nhu-Az-OQM" style="IBUITableViewCellStyleSubtitle" id="KHg-Cj-7ss" customClass="MagicCardTableViewCell" customModule="MtgTraders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHg-Cj-7ss" id="6uu-VN-L7e">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5BB-gA-q1G">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nhu-Az-OQM">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RRH-Mj-vPS" id="fIV-jZ-3NN"/>
+                            <outlet property="delegate" destination="RRH-Mj-vPS" id="nBC-yB-W6M"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nmo-5Q-vDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2684" y="-158"/>
+            <point key="canvasLocation" x="2805" y="-165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AL1-HB-4PP">
@@ -147,6 +135,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nws-tj-CZr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wx1-zC-WLO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

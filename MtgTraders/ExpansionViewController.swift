@@ -1,23 +1,25 @@
 //
-//  ViewController.swift
+//  ExpansionViewController.swift
 //  MtgTraders
 //
-//  Created by Matthew Patterson on 12/9/19.
+//  Created by Matthew Patterson on 12/10/19.
 //  Copyright © 2019 Matthew Patterson. All rights reserved.
 //
 
 import UIKit
 
-class MagicSetTableViewCell: UITableViewCell {
-    @IBOutlet weak var magicSetSymbol: UIImageView!
-    @IBOutlet weak var magicSetName: UILabel!
-    
-}
+//class MagicSetTableViewCell: UITableViewCell {
+//    @IBOutlet weak var magicSetSymbol: UIImageView!
+//    @IBOutlet weak var magicSetName: UILabel!
+//
+//}
 
 
-class ViewController: UITableViewController {
+class ExpansionViewController: UITableViewController {
 //    var cards = [Card]()
     var magicSets = [MagicSet]()
+    
+    var selectedSet = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +98,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SetViewController()
+        let vc = ExpansionViewController()
         vc.selectedSet = magicSets[indexPath.row].search_uri
         navigationController?.pushViewController(vc, animated: true)
     }
