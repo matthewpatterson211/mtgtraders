@@ -8,98 +8,71 @@
 
 import UIKit
 
-//class MagicSetTableViewCell: UITableViewCell {
-//    @IBOutlet weak var magicSetSymbol: UIImageView!
-//    @IBOutlet weak var magicSetName: UILabel!
-//
-//}
+class CardCell: UITableViewCell {
 
+    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var price: UILabel!
+    
+}
 
 class ExpansionViewController: UITableViewController {
-//    var cards = [Card]()
-    var magicSets = [MagicSet]()
     
-    var selectedSet = ""
+    var cards = [Card]()
+    
+    var selectedSet: String = "https://api.scryfall.com/cards?page=1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(CardCell.self, forCellReuseIdentifier: "Cell")
+
         
-//        let urlString = "https://api.scryfall.com/cards?page=3"
-        let urlString = "https://api.scryfall.com/sets"
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
+        if let url = URL(string: selectedSet) {
+        if let data = try? Data(contentsOf: url) {
                 parse(json: data)
-            }
         }
+    }
     }
     
     func parse(json: Data) {
         let decoder = JSONDecoder()
-        
 
-//        if let jsonCards = try? decoder.decode(Cards.self, from: json) {
-//            cards = jsonCards.data
-//            tableView.reloadData()
-//        }
-        
-        if let jsonSets = try? decoder.decode(MagicSets.self, from: json) {
-            magicSets = jsonSets.data
+        do {
+            let jsonCards: Cards = try decoder.decode(Cards.self, from: json)
+            cards = jsonCards.data
+            
             tableView.reloadData()
         }
-    }
+        catch {
+            print("\(error)")
+        }
 
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-//        return cards.count
-        return magicSets.count
+        return cards.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CardCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MagicSetCell", for: indexPath) as! MagicSetTableViewCell
+        let card = cards[indexPath.row]
         
-//        cell.textLabel?.text = petition.title
-//        cell.detailTextLabel?.text = petition.body
-//        let card = cards[indexPath.row]
-//        cell.textLabel?.text = card.name
-//        cell.detailTextLabel?.text = card.set_name
-        let magicSet = magicSets[indexPath.row]
-
-//        print(magicSet.icon_svg_uri)
-//        if let url = URL(string: magicSet.icon_svg_uri) {
-//            print(url)
-//             if let data = try? Data(contentsOf: url) {
-//                print(data)
-//                  cell.magicSetSymbol.image = UIImage(data: data)
-//             }
-//        }
-//        print(magicSet.icon_svg_uri)
-//        let image = getImage(from: magicSet.icon_svg_uri)
-//        cell.magicSetSymbol.image = image
-        cell.magicSetName?.text = magicSet.name
-        print(magicSet.icon_svg_uri)
-        if let imageURL = URL(string: magicSet.icon_svg_uri) {
-            DispatchQueue.global().async {
-            
-            let imageData = try? Data(contentsOf: imageURL)
-                
-                if let imageData = imageData {
-                    let image = UIImage(data: imageData)
-
-                    DispatchQueue.main.async {
-                        cell.magicSetSymbol.image = image
-                    }
-                }
-        }
-        }
+        cell.textLabel?.text = card.name
         
+        
+//        cell.price?.text = card.set_name
+//        cell.title?.text = card.name
+//        cell.Subtitle?.text = card.set_name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ExpansionViewController()
-        vc.selectedSet = magicSets[indexPath.row].search_uri
+        let vc = DetailViewController()
+        vc.selectedCard = cards[indexPath.row].uri
+        
+
         navigationController?.pushViewController(vc, animated: true)
     }
 }

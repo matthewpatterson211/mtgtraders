@@ -17,7 +17,8 @@
 		BE648FF7239F628600EB28E9 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE648FF6239F628600EB28E9 /* Set.swift */; };
 		BE648FF9239F638400EB28E9 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE648FF8239F638400EB28E9 /* Sets.swift */; };
 		BE648FFB239F7EC000EB28E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE648FFA239F7EC000EB28E9 /* DetailViewController.swift */; };
-		BEFACC8023A017A9002B153F /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFACC7F23A017A9002B153F /* SetViewController.swift */; };
+		BE6648E923A14B1E00E5D2E8 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */; };
+		BE6648EB23A14EAC00E5D2E8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6648EA23A14EAC00E5D2E8 /* Model.swift */; };
 		BEFACC8223A0194F002B153F /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFACC8123A0194F002B153F /* Cards.swift */; };
 		BEFACC8423A031B7002B153F /* ExpansionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFACC8323A031B7002B153F /* ExpansionViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +36,8 @@
 		BE648FF6239F628600EB28E9 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		BE648FF8239F638400EB28E9 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
 		BE648FFA239F7EC000EB28E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BEFACC7F23A017A9002B153F /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		BE6648EA23A14EAC00E5D2E8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BEFACC8123A0194F002B153F /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		BEFACC8323A031B7002B153F /* ExpansionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,19 +75,36 @@
 				BE648FDA239F57BE00EB28E9 /* AppDelegate.swift */,
 				BE648FDC239F57BE00EB28E9 /* SceneDelegate.swift */,
 				BE648FDE239F57BE00EB28E9 /* ViewController.swift */,
-				BEFACC7F23A017A9002B153F /* SetViewController.swift */,
 				BE648FFA239F7EC000EB28E9 /* DetailViewController.swift */,
-				BE648FF6239F628600EB28E9 /* Set.swift */,
-				BE648FF8239F638400EB28E9 /* Sets.swift */,
-				BE648FF2239F5DB600EB28E9 /* Card.swift */,
-				BEFACC8123A0194F002B153F /* Cards.swift */,
 				BE648FE0239F57BE00EB28E9 /* Main.storyboard */,
+				BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */,
 				BEFACC8323A031B7002B153F /* ExpansionViewController.swift */,
-				BE648FE3239F57C200EB28E9 /* Assets.xcassets */,
-				BE648FE5239F57C200EB28E9 /* LaunchScreen.storyboard */,
+				BE6648EA23A14EAC00E5D2E8 /* Model.swift */,
+				BE6C647023A06315003C6860 /* Support */,
+				BE6C646F23A062F9003C6860 /* Structs */,
 				BE648FE8239F57C200EB28E9 /* Info.plist */,
 			);
 			path = MtgTraders;
+			sourceTree = "<group>";
+		};
+		BE6C646F23A062F9003C6860 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				BEFACC8123A0194F002B153F /* Cards.swift */,
+				BE648FF2239F5DB600EB28E9 /* Card.swift */,
+				BE648FF8239F638400EB28E9 /* Sets.swift */,
+				BE648FF6239F628600EB28E9 /* Set.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		BE6C647023A06315003C6860 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BE648FE3239F57C200EB28E9 /* Assets.xcassets */,
+				BE648FE5239F57C200EB28E9 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,13 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE648FF7239F628600EB28E9 /* Set.swift in Sources */,
-				BEFACC8023A017A9002B153F /* SetViewController.swift in Sources */,
 				BE648FDF239F57BE00EB28E9 /* ViewController.swift in Sources */,
 				BE648FF3239F5DB600EB28E9 /* Card.swift in Sources */,
 				BEFACC8223A0194F002B153F /* Cards.swift in Sources */,
 				BE648FDB239F57BE00EB28E9 /* AppDelegate.swift in Sources */,
 				BE648FDD239F57BE00EB28E9 /* SceneDelegate.swift in Sources */,
+				BE6648E923A14B1E00E5D2E8 /* SearchTableViewController.swift in Sources */,
 				BE648FFB239F7EC000EB28E9 /* DetailViewController.swift in Sources */,
+				BE6648EB23A14EAC00E5D2E8 /* Model.swift in Sources */,
 				BEFACC8423A031B7002B153F /* ExpansionViewController.swift in Sources */,
 				BE648FF9239F638400EB28E9 /* Sets.swift in Sources */,
 			);
