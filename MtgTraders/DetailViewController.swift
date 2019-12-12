@@ -57,7 +57,6 @@ class DetailViewController: UITableViewController {
 
 
 
-            print (jsonCard.mana_cost)
             
             
             cardDetails.append(jsonCard.type_line)

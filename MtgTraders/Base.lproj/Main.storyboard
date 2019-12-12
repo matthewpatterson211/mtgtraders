@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="YX7-1Y-Gh0">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="QYW-aP-BeI">
+                        <barButtonItem key="rightBarButtonItem" id="QYW-aP-BeI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o1q-tg-TyW" userLabel="Search">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -82,7 +83,7 @@
             <objects>
                 <tableViewController title="Search" id="CY2-uJ-UWx" customClass="SearchTableViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5lk-Sx-yXn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -109,7 +110,7 @@
         <!--Detail View Controller-->
         <scene sceneID="rhI-GN-qCd">
             <objects>
-                <tableViewController id="MXq-uy-A7I" customClass="DetailViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailView" id="MXq-uy-A7I" customClass="DetailViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U2I-nK-6Nr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,20 +154,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="bpB-rm-eBt" customClass="CardCell" customModule="MtgTraders" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bpB-rm-eBt" id="2T2-ss-fMf">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIT-xc-mTJ">
-                                            <rect key="frame" x="20" y="11" width="43" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6b-Ka-q0a">
-                                            <rect key="frame" x="344.5" y="0.0" width="38.5" height="43.5"/>
+                                            <rect key="frame" x="344.5" y="0.0" width="38.5" height="43"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -199,11 +200,11 @@
             </objects>
             <point key="canvasLocation" x="2740.579710144928" y="-158.03571428571428"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Cards-->
         <scene sceneID="AL1-HB-4PP">
             <objects>
                 <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" id="KSb-jQ-cAP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="lAH-x1-kJ5"/>
+                    <tabBarItem key="tabBarItem" title="Cards" image="chart.bar" catalog="system" id="lAH-x1-kJ5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hf6-Vt-FDN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -230,11 +231,111 @@
                     </tabBar>
                     <connections>
                         <segue destination="KSb-jQ-cAP" kind="relationship" relationship="viewControllers" id="84U-QW-xe6"/>
+                        <segue destination="MJs-pT-bkS" kind="relationship" relationship="viewControllers" id="eEk-S7-DbR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khw-o1-W6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="-158.03571428571428"/>
         </scene>
+        <!--Trades-->
+        <scene sceneID="x5U-ya-wUB">
+            <objects>
+                <viewController id="MJs-pT-bkS" customClass="TradeViewController" customModule="MtgTraders" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S3a-f9-ybt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-6a-KJe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="326" id="8uV-hg-BoV"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCell" id="pSo-I3-WgB" customClass="CardCell" customModule="MtgTraders" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pSo-I3-WgB" id="VyN-u0-RX7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-1Z-ObN">
+                                <rect key="frame" x="0.0" y="486" width="414" height="327"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="2IK-vl-xs9"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BottomCell" id="HhO-bp-qlg" customClass="CardCell" customModule="MtgTraders" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhO-bp-qlg" id="Y9q-H9-OLT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Difference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0j-DB-t1N">
+                                <rect key="frame" x="0.0" y="457.5" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btE-eT-8uQ">
+                                <rect key="frame" x="38" y="409" width="109" height="30"/>
+                                <state key="normal" title="Add Card to top"/>
+                                <connections>
+                                    <action selector="addToTop:" destination="MJs-pT-bkS" eventType="touchUpInside" id="apv-g3-U8N"/>
+                                    <segue destination="CY2-uJ-UWx" kind="show" identifier="topAdderNav" id="eHT-eA-tFp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xye-RX-XYW">
+                                <rect key="frame" x="260" y="409" width="134" height="30"/>
+                                <state key="normal" title="Add card to Bottom"/>
+                                <connections>
+                                    <action selector="addToButtom:" destination="MJs-pT-bkS" eventType="touchUpInside" id="5qz-cW-BOg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="leading" secondItem="VVo-1Z-ObN" secondAttribute="leading" id="2u6-3r-5nS"/>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="trailing" secondItem="N0j-DB-t1N" secondAttribute="trailing" id="77Q-FK-QUI"/>
+                            <constraint firstItem="xye-RX-XYW" firstAttribute="trailing" secondItem="S3a-f9-ybt" secondAttribute="trailingMargin" id="7QT-um-sjz"/>
+                            <constraint firstItem="btE-eT-8uQ" firstAttribute="baseline" secondItem="xye-RX-XYW" secondAttribute="baseline" id="95B-ak-8ct"/>
+                            <constraint firstItem="VVo-1Z-ObN" firstAttribute="bottom" secondItem="dtq-O1-u3u" secondAttribute="bottom" id="9Id-Fu-73P"/>
+                            <constraint firstItem="btE-eT-8uQ" firstAttribute="leading" secondItem="dtq-O1-u3u" secondAttribute="leading" constant="38" id="9hh-vr-aUV"/>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="leading" secondItem="dtq-O1-u3u" secondAttribute="leading" id="CSu-J3-1bO"/>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="top" secondItem="dtq-O1-u3u" secondAttribute="top" id="Cmr-Po-Qw3"/>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="leading" secondItem="N0j-DB-t1N" secondAttribute="leading" id="Tuk-1x-TJ7"/>
+                            <constraint firstItem="VVo-1Z-ObN" firstAttribute="top" secondItem="N0j-DB-t1N" secondAttribute="bottom" constant="8" id="XH8-Dc-MiS"/>
+                            <constraint firstItem="dtq-O1-u3u" firstAttribute="trailing" secondItem="2yi-6a-KJe" secondAttribute="trailing" id="aQt-yW-VFs"/>
+                            <constraint firstItem="N0j-DB-t1N" firstAttribute="top" secondItem="btE-eT-8uQ" secondAttribute="bottom" constant="18.5" id="dts-Sn-xsQ"/>
+                            <constraint firstItem="xye-RX-XYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="btE-eT-8uQ" secondAttribute="trailing" constant="8" symbolic="YES" id="l1D-ph-Voe"/>
+                            <constraint firstItem="2yi-6a-KJe" firstAttribute="trailing" secondItem="VVo-1Z-ObN" secondAttribute="trailing" id="sIl-pT-wqp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dtq-O1-u3u"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trades" image="arrowshape.turn.up.right.fill" catalog="system" id="dCH-O7-2iD"/>
+                    <connections>
+                        <outlet property="priceDifference" destination="N0j-DB-t1N" id="B3d-ZT-Bz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1U-3L-8uB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="565.17857142857144"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
+        <image name="chart.bar" catalog="system" width="64" height="44"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eHT-eA-tFp"/>
+    </inferredMetricsTieBreakers>
 </document>

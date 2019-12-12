@@ -11,7 +11,7 @@ import UIKit
 class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        filteredTableData.removeAll(keepingCapacity: false)
+        
 
         let searchPredicate = searchController.searchBar.text!
 //        let array = (tableData as NSArray).filtered(using: searchPredicate)
@@ -31,14 +31,22 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     
     var cards = [Card]()
     
+    var topCardAdder: Bool = false
+    var bottomCardAdder: Bool = false
+    
+    weak var delegate: TradeViewController!
+    
     var selectedSet: String = "https://api.scryfall.com/cards?page=1"
     
-    let tableData = ["One","Two","Three","Twenty-One"]
-    var filteredTableData = [String]()
+    
+    
     var resultSearchController = UISearchController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(topCardAdder)
+        print(bottomCardAdder)
 
         resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
@@ -102,6 +110,13 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if topCardAdder == true {
+            topCardAdder = false
+            let vc = TradeViewController()
+            vc.topSelectedCard = cards[indexPath.row].uri
+            navigationController?.pushViewController(vc, animated: true)
+        }
         let vc = DetailViewController()
         vc.selectedCard = cards[indexPath.row].uri
         
