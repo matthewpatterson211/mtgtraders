@@ -20,12 +20,15 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         let completeString = "https://api.scryfall.com/cards/search?q=\(searchPredicate)"
         print(completeString)
         
+        DispatchQueue.global(qos: .userInitiated).async {
         if let url = URL(string: completeString) {
         if let data = try? Data(contentsOf: url) {
-                parse(json: data)
+            self.parse(json: data)
         }
-
-        self.tableView.reloadData()
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
     }
     }
     
@@ -74,8 +77,9 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
             do {
                 let jsonCards: Cards = try decoder.decode(Cards.self, from: json)
                 cards = jsonCards.data
-                
-                tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
             catch {
                 print("\(error)")
@@ -112,11 +116,12 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if topCardAdder == true {
-            topCardAdder = false
             let vc = TradeViewController()
-            vc.topSelectedCard = cards[indexPath.row].uri
-            navigationController?.pushViewController(vc, animated: true)
+            topCardArray.append(cards[indexPath.row])
+            vc.receiveCard(cardToAdd: cards[indexPath.row])
+            dismiss(animated: true, completion: nil)
         }
+        
         let vc = DetailViewController()
         vc.selectedCard = cards[indexPath.row].uri
         

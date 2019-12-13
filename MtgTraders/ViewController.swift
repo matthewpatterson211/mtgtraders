@@ -27,7 +27,9 @@ class ViewController: UITableViewController {
         
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
-                parse(json: data)
+                DispatchQueue.global().async {
+                    self.parse(json: data)
+                }
             }
         }
     }
@@ -39,7 +41,9 @@ class ViewController: UITableViewController {
 
         if let jsonSets = try? decoder.decode(MagicSets.self, from: json) {
             magicSets = jsonSets.data
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 

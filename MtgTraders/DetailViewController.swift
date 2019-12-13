@@ -14,9 +14,6 @@ class DetailViewController: UITableViewController {
     
     var cardDetails = [String]()
     var selectedCard: String = ""
-    
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +23,14 @@ class DetailViewController: UITableViewController {
         
         print(selectedCard)
         
-        if let url = URL(string: selectedCard)
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let url = URL(string: self.selectedCard)
         {
             if let data = try? Data(contentsOf: url) {
-                parse(json: data)
+                self.parse(json: data)
             }
         }
-        
+        }
     }
     
     func parse(json: Data) {
@@ -42,7 +40,7 @@ class DetailViewController: UITableViewController {
         
         
         if let jsonCard = try? decoder.decode(Card.self, from: json) {
-            print(jsonCard.prices)
+            
             
             cardDetails.append(jsonCard.name)
 //            print(jsonCard.mana_cost)
@@ -97,8 +95,9 @@ class DetailViewController: UITableViewController {
             
             print(priceString)
             cardDetails = [jsonCard.name, (jsonCard.mana_cost ?? "0"), jsonCard.type_line, priceString, jsonCard.set_name, jsonCard.uri]
-            
-                tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -18,7 +18,6 @@
 		BE648FF9239F638400EB28E9 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE648FF8239F638400EB28E9 /* Sets.swift */; };
 		BE648FFB239F7EC000EB28E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE648FFA239F7EC000EB28E9 /* DetailViewController.swift */; };
 		BE6648E923A14B1E00E5D2E8 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */; };
-		BE6648EB23A14EAC00E5D2E8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6648EA23A14EAC00E5D2E8 /* Model.swift */; };
 		BE70862A23A2208600959FDE /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70862923A2208600959FDE /* TradeViewController.swift */; };
 		BEFACC8223A0194F002B153F /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFACC8123A0194F002B153F /* Cards.swift */; };
 		BEFACC8423A031B7002B153F /* ExpansionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFACC8323A031B7002B153F /* ExpansionViewController.swift */; };
@@ -38,7 +37,6 @@
 		BE648FF8239F638400EB28E9 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
 		BE648FFA239F7EC000EB28E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		BE6648EA23A14EAC00E5D2E8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BE70862923A2208600959FDE /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		BEFACC8123A0194F002B153F /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		BEFACC8323A031B7002B153F /* ExpansionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				BE70862923A2208600959FDE /* TradeViewController.swift */,
 				BE6648E823A14B1E00E5D2E8 /* SearchTableViewController.swift */,
 				BEFACC8323A031B7002B153F /* ExpansionViewController.swift */,
-				BE6648EA23A14EAC00E5D2E8 /* Model.swift */,
 				BE6C647023A06315003C6860 /* Support */,
 				BE6C646F23A062F9003C6860 /* Structs */,
 				BE648FE8239F57C200EB28E9 /* Info.plist */,
@@ -190,7 +187,6 @@
 				BE648FDD239F57BE00EB28E9 /* SceneDelegate.swift in Sources */,
 				BE6648E923A14B1E00E5D2E8 /* SearchTableViewController.swift in Sources */,
 				BE648FFB239F7EC000EB28E9 /* DetailViewController.swift in Sources */,
-				BE6648EB23A14EAC00E5D2E8 /* Model.swift in Sources */,
 				BEFACC8423A031B7002B153F /* ExpansionViewController.swift in Sources */,
 				BE648FF9239F638400EB28E9 /* Sets.swift in Sources */,
 			);

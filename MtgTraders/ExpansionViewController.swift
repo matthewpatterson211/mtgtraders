@@ -27,12 +27,13 @@ class ExpansionViewController: UITableViewController {
         tableView.register(CardCell.self, forCellReuseIdentifier: "Cell")
 
         
-        
-        if let url = URL(string: selectedSet) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let url = URL(string: self.selectedSet) {
         if let data = try? Data(contentsOf: url) {
-                parse(json: data)
+            self.parse(json: data)
         }
     }
+        }
     }
     
     func parse(json: Data) {
@@ -41,8 +42,9 @@ class ExpansionViewController: UITableViewController {
         do {
             let jsonCards: Cards = try decoder.decode(Cards.self, from: json)
             cards = jsonCards.data
-            
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         catch {
             print("\(error)")

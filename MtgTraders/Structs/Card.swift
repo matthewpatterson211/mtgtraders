@@ -17,4 +17,11 @@ struct Card: Codable {
     var type_line: String
     var power: String?
     var toughness: String?
+    
+    var printPricing: String? {
+        
+        return prices["usd"] ?? "No Data"
+
+    
+    }
 }
