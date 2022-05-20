@@ -4,7 +4,4 @@ IOS app to practice parsing json. It connects to the scryfall api and downloads 
 
 <img src="https://raw.githubusercontent.com/matthewpatterson211/mtgtraders/master/mtgtradersmenu.jpg" height="25%" width="25%" >
 <img src="https://raw.githubusercontent.com/matthewpatterson211/mtgtraders/master/mtgtradersmenu2.png" height="25%" width="25%" >
-![mtgtradersmenu](https://raw.githubusercontent.com/matthewpatterson211/mtgtraders/master/mtgtradersmenu.jpg height="60" width="60")
 
-
-![mtgtradersmenu2](https://raw.githubusercontent.com/matthewpatterson211/mtgtraders/master/mtgtradersmenu2.png)
